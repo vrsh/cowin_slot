@@ -17,7 +17,7 @@ This will keep running unless you force quit and will try to fetch info every 15
 
 **dose:** 1 for dose1 and 2 for dose2 (default 1)
 
-**centers:** names of centers of your choice, comment selected centers and uncomment ```centers=['All']``` (line 49) for selecting all centers in the district
+**centers:** names of centers of your choice, default ```centers=['All']```. For selecting nearby centers in the district remove 'All' and add selected centers names to centers list as shown in the code.
 
 **update_time:** update time in minutes (default 15 seconds)
 

@@ -12,9 +12,10 @@ INPUT:
 distrct_id: district id for your district (default 294 for bengaluru bbmp)
 age_group: 18 for 18+ and 45 for 45+ (default 18)
 dose: 1 for dose1 and 2 for dose2 (default 1)
-centers: names of centers of your choice, comment selected centers and
-uncomment centers=['All'] (line 49) for selecting all centers in the district
-update_time: update time in minutes (default 15 seconds)
+centers: names of centers of your choice. (default centers=['All'] for all centers). 
+for selecting nearby centers remove 'All' from centers list and add the selected
+centers to the centers list as show in the code.
+update_time: update time in minutes (default 15 seconds/ 0.25 minutes)
 
 OUTPUT: 
 Case 1: when a slot is not available: 
