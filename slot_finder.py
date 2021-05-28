@@ -3,7 +3,7 @@ A vaccination slot alert system
 Alerts for available slots in current week
 
 Run this script on any system having python installed
-to run execute: python cowin_dist_weekly.py
+to run execute: python slot_finder.py
 This will keep running unless you force quit and will 
 try to fetch info every 5 minute (default)
 frequency can be changed. Read below to know how.
