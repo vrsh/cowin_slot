@@ -69,21 +69,21 @@ try:
             resp_json = response.json()
             if resp_json["centers"]:
                 for center in resp_json["centers"]:
-                    for sel_center in centers:
-                        if sel_center=='All' or center["name"] == sel_center:
-                            for session in center["sessions"]:
-                                if session["min_age_limit"] == age_group:
-                                    if session[f"available_capacity_dose{dose}"] > 0:
-                                        print('\n~~~~~~~~~~~~~~~~~\n')
-                                        print(f'Alert Time: {datetime.datetime.now()}')
-                                        print(f'Date: {session["date"]}')
-                                        print(f'Center: {center["name"]}')
-                                        print(f'Address: {center["address"]}')
-                                        print(f'Availability: {session[f"available_capacity_dose{dose}"]}')
-                                        print(f'Fee Type: {center["fee_type"]}')
-                                        print('\a')
-                                        slots.write(f'{datetime.datetime.now()},{session["date"]},{center["name"]},{center["address"]},{session[f"available_capacity_dose{dose}"]},{center["fee_type"]}\n')
+                    if (centers[0]=='All') or (center["name"] in centers):
+                        for session in center["sessions"]:
+                            if session["min_age_limit"] == age_group:
+                                if session[f"available_capacity_dose{dose}"] > 0:
+                                    print('\n~~~~~~~~~~~~~~~~~\n')
+                                    print(f'Alert Time: {datetime.datetime.now()}')
+                                    print(f'Date: {session["date"]}')
+                                    print(f'Center: {center["name"]}')
+                                    print(f'Address: {center["address"]}')
+                                    print(f'Availability: {session[f"available_capacity_dose{dose}"]}')
+                                    print(f'Fee Type: {center["fee_type"]}')
+                                    print('\a')
+                                    slots.write(f'{datetime.datetime.now()},{session["date"]},{center["name"]},{center["address"]},{session[f"available_capacity_dose{dose}"]},{center["fee_type"]}\n')
         # print('\nSearch Complete')
+        slots.write('---,---,---,---,---,---\n')
         time.sleep(update_time*60)
 except KeyboardInterrupt:
     print("\ninterrupted by USER")
