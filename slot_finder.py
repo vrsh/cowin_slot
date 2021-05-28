@@ -23,7 +23,7 @@ nothing (99.99% time for 18+, thanks to our planning and execution system)
 Case 2: when a slot for dose is available for your age group: 
 a beep sound to alert with details of date of availability, 
 center name, its address, available slots and fee type
-same info is stored in slots.csv file
+same info is stored in cowin_slots.csv file
 
 Author: Ritesh Sharma
 '''
@@ -33,7 +33,7 @@ import datetime
 import json
 import time
 
-# BBMP is 294
+# find your district id in district_ids.csv file
 district_id = 294
 
 # 18 or 45
@@ -54,7 +54,7 @@ centers = ['All']
 # in minutes
 update_time = 0.25
 
-slots = open('slots.csv', 'w')
+slots = open('cowin_slots.csv', 'w')
 slots.write('Alert Time,Date,Center,Address,Availability,Fee Type\n')
 
 try:
